@@ -1,13 +1,13 @@
 ### Library Management System - Group 50 (By Aldrin Alfred and Antony Jovious Nambely)
 
 ### Project Overview:
-This Library Management System is designed to help users securely 
+The Library Management System is designed to facilitate secure online access to a wide range of books. It ensures that users can sign up, sign in, verify email ID, reset their passwords securely. 
 
 ### Security Features:
-* Register a user account with email verification for successful sign-up.
-* Securely login using email and password.
-* Hashed password storage in DB.
-* Installation of self signed SSL certificate to browser.
+* Register a user account with username, email and password  with strong validation checks.
+* Securely login using email and password post email verification.
+* Hashing of user passwords in the database, ensuring data integrity and security.
+* Installation of self-signed SSL certificate to browser.
 
 ### Installation:
 To run this project locally, follow these steps:
