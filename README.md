@@ -1,49 +1,60 @@
-Library Management System - Group 50 (By Aldrin Alfred and Antony Jovious Nambely)
+### Library Management System - Group 50 (By Aldrin Alfred and Antony Jovious Nambely)
 
-Project Overview
+### Project Overview:
 This Library Management System is designed to help users securely 
 
-Security Features
-Register a user account with email verification for successful sign-up.
-Securely login using email and password.
-Hashed password storage in DB.
-Installation of self signed SSL certificate to browser.
+### Security Features:
+* Register a user account with email verification for successful sign-up.
+* Securely login using email and password.
+* Hashed password storage in DB.
+* Installation of self signed SSL certificate to browser.
 
-
-Installation
+### Installation:
 To run this project locally, follow these steps:
 
-Clone the repository:
+### Clone the Repository
+To clone the repository, run the following command:
+```
+git clone https://github.com/aldrinalfred-dev/library-management-system.git
+cd library-management-system
+```
 
-bash
-Copy code
-git clone https://github.com/yourusername/library_management.git
-cd library_management
-Install dependencies:
-
-bash
-Copy code
+### Install project dependencies:
+```
 npm install
-Set up environment variables:
+```
 
-Create a .env file in the root directory and add your configuration. Example:
+### Set Up Environment Variables:
+Create a .env file in the root of your project and add the necessary environment variables. 
+```
+MONGODB_URI="mongodb+srv://<username>:<password>@librarycluster.lbtxv3l.mongodb.net/?retryWrites=true&w=majority&appName=LibraryCluster"
+PORT=3000
+EMAIL_USER=7da36bde21411a
+EMAIL_PASS=35796500d07cc4
+EMAIL_HOST=sandbox.smtp.mailtrap.io
+EMAIL_PORT=2525
+```
 
+### Generate SSL Certificates 
+Create a directory called /ssl
 
-Run the application:
+Run the following OpenSSL commands,
+```
+openssl genrsa -out key.pem 2048 # Generates private key
+openssl req -new -key key.pem -out csr.pem # Generates CSR file
+openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out cert.pem # Generates SSL cert file
+```
+### Run the application:
+```
+nodemon app.js
+```
+The application will be available at https://localhost:3000.
 
-bash
-Copy code
-npm start
-The application will be available at http://localhost:3000.
-
-Usage
-
-
-Technologies Used
-HTML/CSS: Front end page design.
-Node.js: JavaScript runtime
-Express.js: Web framework for Node.js
-MongoDB: NoSQL database
-Mongoose: MongoDB object modeling for Node.js
-Postman: API testing
+### Technologies Used
+* HTML/CSS: Front end page design.
+* Node.js: JavaScript runtime
+* Express.js: Web framework for Node.js
+* MongoDB: NoSQL database
+* Postman: API testing
+* MailTrap: Testing email functionality for development purposes
 
